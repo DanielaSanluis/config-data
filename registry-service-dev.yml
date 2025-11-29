@@ -1,9 +1,15 @@
 spring:
   application:
-    name: registry
+    name: registry-service
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: false   # <-- DESACTIVA el eurekaAutoServiceRegistration
+
 server:
- port: 8761
+  port: 8761
+
 eureka:
- client:
-   register-with-eureka: false
-   fetch-registry: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
